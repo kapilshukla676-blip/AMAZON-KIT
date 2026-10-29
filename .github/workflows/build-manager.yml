@@ -42,7 +42,7 @@ jobs:
 
       - name: Decode Keystore
         run: |
-          echo "${{ secrets.KEYSTORE }}" | base64 -d > manager/app/amazon.keystore
+          echo "${{ secrets.KEYSTORE }}" | base64 -d > /home/runner/work/AMAZON-KIT/AMAZON-KIT/manager/app/amazon.keystore
 
       - name: Build APK
         run: |
@@ -51,7 +51,7 @@ jobs:
             -PKSU_PACKAGE_NAME=com.amazon.mShop.android.shopping \
             -PKSU_EXPECTED_HASH=c82ff658b65301f53d13c65204f8e4ef6f842974d06f0236da18ea6dd129adf8 \
             -PKSU_EXPECTED_SIZE=0x37e \
-            -Pandroid.injected.signing.store.file=app/amazon.keystore \
+            -Pandroid.injected.signing.store.file=/home/runner/work/AMAZON-KIT/AMAZON-KIT/manager/app/amazon.keystore \
             -Pandroid.injected.signing.store.password=${{ secrets.KEYSTORE_PASSWORD }} \
             -Pandroid.injected.signing.key.alias=${{ secrets.KEY_ALIAS }} \
             -Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSWORD }}

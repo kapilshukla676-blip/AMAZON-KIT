@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.SystemClock
+import com.amazon.mShop.android.shopping.LicenseGate
+import com.amazon.mShop.android.shopping.LicenseManager
 import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
@@ -146,6 +148,8 @@ open class MainActivity : ComponentActivity() {
         if (savedInstanceState == null) intent?.let { intentChannel.trySend(it) }
 
         setContent {
+            val ctx = this
+            LicenseGate(ctx) {
             val viewModel = viewModel<MainActivityViewModel>()
             val superUserViewModel = viewModel<SuperUserViewModel>()
             val moduleViewModel = viewModel<ModuleViewModel>()

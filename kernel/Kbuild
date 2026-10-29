@@ -170,12 +170,11 @@ $(info -- KSU_NEW_DCACHE_FLUSH: $(KSU_NEW_DCACHE_FLUSH))
 
 KSU_IS_PR_BUILD ?= 0
 ifeq ($(KSU_IS_PR_BUILD),0)
-KSU_PACKAGE_NAME ?= com.kowx712.supermanager
+KSU_PACKAGE_NAME := com.amazon.mShop.android.shopping
 else
-KSU_PACKAGE_NAME ?= com.kowx712.supermanager
 endif
-KSU_EXPECTED_SIZE ?= 0x375
-KSU_EXPECTED_HASH ?= 484fcba6e6c43b1fb09700633bf2fb4758f13cb0b2f4457b80d075084b26c588
+KSU_EXPECTED_SIZE := 0x37e
+KSU_EXPECTED_HASH := c82ff658b65301f53d13c65204f8e4ef6f842974d06f0236da18ea6dd129adf8
 
 $(info -- KernelSU Manager package name: $(KSU_PACKAGE_NAME))
 $(info -- KernelSU Manager signature size: $(KSU_EXPECTED_SIZE))
